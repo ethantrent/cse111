@@ -12,7 +12,6 @@ import random
 def main():
     # Generate and print six sentences one each for these grammar combinations: single past, single present, 
     # single future, plural past, plural present, plural future.
-    # Define fixed combinations of quantity and tense.
     combinations = [
         (1, "past"),
         (1, "present"),
@@ -121,22 +120,109 @@ def get_verb(quantity, tense):
     word = random.choice(words)
     return word
 
+def get_adverb():
+    """Return a randomly chosen adverb
+    from this list of adverbs:
+        "accidentally", "always", "angrily", "anxiously", "awkwardly",
+        "badly", "blindly", "boastfully", "boldly", "bravely",
+        "brightly", "calmly", "carefully", "cautiously", "cheerfully",
+        "clearly", "correctly", "courageously", "crossly", "cruelly",
+        "curiously", "deftly", "deliberately", "doubtfully", "eagerly",
+        "elegantly", "enormously", "enthusiastically", "equally", "evenly",
+        "eventually", "exactly", "faithfully", "finally", "fondly",
+        "foolishly", "fortunately", "frankly", "frantically", "gently",
+        "gladly", "gracefully", "greedily", "happily", "hastily",
+        "honestly", "hourly", "hungrily", "innocently", "inquisitively",
+        "irritably", "jealously", "justly", "kindly", "lazily",
+        "loosely", "madly", "merrily", "mortally", "mysteriously",
+        "nervously", "never", "obediently", "obnoxiously", "occasionally",
+        "often", "only", "painfully", "perfectly", "politely",
+        "poorly", "powerfully", "promptly", "quickly",
+
+    Return: a randomly chosen adverb.
+    """
+    words = ["accidentally", "always", "angrily", "anxiously", "awkwardly",
+             "badly", "blindly", "boastfully", "boldly", "bravely",
+             "brightly", "calmly", "carefully", "cautiously", "cheerfully",
+             "clearly", "correctly", "courageously", "crossly", "cruelly",
+             "curiously", "deftly", "deliberately", "doubtfully", "eagerly",
+             "elegantly", "enormously", "enthusiastically", "equally", "evenly",
+             "eventually", "exactly", "faithfully", "finally", "fondly",
+             "foolishly", "fortunately", "frankly", "frantically", "gently",
+             "gladly", "gracefully", "greedily", "happily", "hastily",
+             "honestly", "hourly", "hungrily", "innocently", "inquisitively",
+             "irritably", "jealously", "justly", "kindly", "lazily",
+             "loosely", "madly", "merrily", "mortally", "mysteriously",
+             "nervously", "never", "obediently", "obnoxiously", "occasionally",
+             "often", "only", "painfully", "perfectly", "politely",
+             "poorly", "powerfully", "promptly", "quickly"]
+
+    # Randomly choose and return an adverb.
+    word = random.choice(words)
+    return word
+
+def get_preposition():
+    """Return a randomly chosen preposition
+    from this list of prepositions:
+        "about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"
+
+    Return: a randomly chosen preposition.
+    """
+    words = ["about", "above", "across", "after", "along",
+             "around", "at", "before", "behind", "below",
+             "beyond", "by", "despite", "except", "for",
+             "from", "in", "into", "near", "of",
+             "off", "on", "onto", "out", "over",
+             "past", "to", "under", "with", "without"]
+
+    # Randomly choose and return a preposition.
+    word = random.choice(words)
+    return word
+
+def get_prepositional_phrase(quantity):
+    """Build and return a prepositional phrase composed
+    of three words: a preposition, a determiner, and a
+    noun by calling the get_preposition, get_determiner,
+    and get_noun functions.
+
+    Parameter
+        quantity: an integer that determines if the
+            determiner and noun in the prepositional
+            phrase returned from this function should
+            be single or pluaral.
+    Return: a prepositional phrase.
+    """
+    # Get a preposition, determiner, and noun.
+    preposition = get_preposition()
+    determiner = get_determiner(quantity)
+    noun = get_noun(quantity)
+
+    # Build and return the prepositional phrase.
+    phrase = preposition + " " + determiner + " " + noun
+    return phrase
+
 def make_sentence(quantity, tense):
-    """Build and return a sentence with three words:
-    a determiner, a noun, and a verb. The grammatical
-    quantity of the determiner and noun will match the
+    """Build and return a sentence with four parts:
+    a determiner, a noun, a verb, and a prepositional phrase. 
+    The grammatical quantity of the determiner and noun will match the
     number in the quantity parameter. The grammatical
     quantity and tense of the verb will match the number
     and tense in the quantity and tense parameters.
     """
 
-    # Get a determiner, noun, and verb.
+    # Call the determiner, noun, verb, and prepositional phrase.
     determiner = get_determiner(quantity)
     noun = get_noun(quantity)
     verb = get_verb(quantity, tense)
+    adverb = get_adverb()
+    prepositional_phrase = get_prepositional_phrase(quantity)
 
-    # Build and return the sentence.
-    sentence = determiner.capitalize() + " " + noun + " " + verb + "."
+    sentence = f"{determiner.capitalize()} {noun} {adverb} {verb} {prepositional_phrase}."
     return sentence
 
 main()
