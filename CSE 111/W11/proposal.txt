@@ -1,0 +1,72 @@
+CSE 111 Proposal for a Student Chosen Program
+
+    (This is a proposal. All proposals are written with our best
+    knowledge at the beginning of a project. As we progress from the
+    beginning to the end of a project, we gain more knowledge, and we
+    change some of our proposed ideas. This is part of completing any
+    project and is fine.  However, we still must write a proposal so
+    that our teachers or supervisors know what we intend to do. Please
+    answer each of the following questions to the best of your
+    knowledge.)
+
+1. What is the title of your program?
+BYUI Winter Weather Navigator
+
+2. What real-world problem will your program address or help to solve?
+
+BYUI students face significant challenges navigating campus during winter months in Rexburg, Idaho. 
+This program helps students plan their commute times, find safe sheltered routes between buildings, 
+choose appropriate parking lots, and prepare properly for different winter weather conditions. 
+It aims to improve campus safety and reduce accidents during winter weather by providing 
+weather-specific recommendations and preparation checklists.
+
+3. What will you learn from developing this program?
+
+- How to write and organize multiple Python functions that work together
+- Using dictionaries and lists to store and manage complex data structures
+- Writing unit tests with pytest for multiple functions
+- Designing reusable functions with parameters and return values
+- Creating a user-friendly command-line interface
+- Implementing error handling for user input
+- Writing clear documentation and docstrings for functions
+- Managing multiple related functions that share common data structures
+
+4. What Python modules will your program use?
+
+    (Some examples are: csv, datetime, functools, matplotlib, math,
+    pandas, pytest, random, requests, and tkinter.)
+
+- json: For storing campus route and location data
+- csv: For tracking weather history
+- math: For calculating commute times
+- datetime: For timestamp handling
+- pytest: For testing
+
+5. Will you separate your Python program into functions that each
+perform a single task?
+
+    (Remember that the most reusable functions don't get user input and
+    don't print results but instead have parameters and return a result.
+    Functions that get user input and print results are important and do
+    useful work but are not easily reusable.)
+
+    (Remember also that it's hard to test functions that get user input
+    and don't print results but instead have parameters and return
+    a result. Therefore, you should write most of your program functions
+    to have parameters and return a result.)
+
+Yes, the program is separated into single-task functions:
+- calculate_commute_time(): Calculates travel time based on distance and weather
+- find_safe_routes(): Finds sheltered routes between buildings
+- get_parking_recommendations(): Suggests parking lots based on conditions
+- get_winter_preparation_checklist(): Generates weather-specific checklists
+- get_user_input(): Handles user input (the only function doing this)
+- main(): Orchestrates the program flow
+
+6. Will you write test functions to test at least two of your program
+functions?
+
+Yes, the program includes test functions for three core functions:
+- test_calculate_commute_time(): Tests commute time calculations for different conditions
+- test_get_parking_recommendations(): Tests parking recommendations for different scenarios
+- test_get_winter_preparation_checklist(): Tests checklist generation for various conditions 

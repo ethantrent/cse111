@@ -1,0 +1,22 @@
+Please respond thoroughly (at least two sentences for each question) to
+the following three questions.
+
+1. Describe an experience you had this semester where you saw the power of
+functions.
+
+At the beginning of the semester I couldn't grasp the concepts of functions as we briefly learned in CSE110. I began to understand their purpose and it
+helped me better understand how usefult they are, especially being reusable for others. The water flow assignment was a great example of how programs
+can be used to make something more simplistic and easier to write, while being reusable.
+
+2. In your judgment, what is the value of test functions?
+
+In my opinion, test functions make the process of ensuring the function is working properly. They set up a specific scenario, 
+execute the code being tested, and then assert whether the actual outcome matches the expected outcome.
+
+3. Describe your process for troubleshooting and fixing a program that
+has a problem. What is one thing you can do to improve your process?
+
+The first thing I would do is use the debugger tool. It's always my go to when troubleshooting an error. I would see if I could catch
+anything with just looking at the program, but the debugger would help me make sure I can find any errors or problems within the program.
+One thing I could do to improve my process is by ensuring everything was coded in correctly before going in with the debugger, especially if
+it is a simple error. Then, if I couldn't figure out I would go through with debugger to understand where the mistake is happening.
